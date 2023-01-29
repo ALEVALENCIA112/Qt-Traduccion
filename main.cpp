@@ -11,13 +11,15 @@ int main(int argc, char *argv[])
     QTranslator traducion;
     // Solicitando al usuario que seleccione un idioma
     QStringList idiomas;
-    idiomas << "Francés" << "Inglés" << "Español";
+    idiomas << "Alemán" << "Francés" << "Inglés" << "Español";
     QString idiomaSeleccionado = QInputDialog::getItem(NULL,
                                "Idioma",
                                "Seleccione un idioma",
                                idiomas);
     // Dependiendo del idioma seleccionado, carga el archivo de rtaducción
-    if (idiomaSeleccionado == "Francés"){
+    if(idiomaSeleccionado == "Alemán"){
+        traducion.load(":/germany.qm");
+    }else if (idiomaSeleccionado == "Francés"){
         traducion.load(":/Calculadora_fr_FR.qm");
     }else if (idiomaSeleccionado == "Inglés"){
         traducion.load(":/Calculadora_en.qm");
